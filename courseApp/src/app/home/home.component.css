@@ -1,0 +1,58 @@
+img{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+  @media (max-width: 600px) {
+    .homeImg {
+      height: 160px;
+    }
+  }
+  @media (max-width: 600px) {
+    .h3_size,.h4_size {
+      font-size: 25px;
+    }
+  }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h3{
+    font-family: 'Muli', sans-serif;
+    font-size: 5vw;
+    color: rgba(255, 255, 255, 0.945);
+    letter-spacing: -1.5px;
+    text-shadow: none;
+    text-align: center;
+  }
+
+  h4{
+    font-family:sans-serif;
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: 300;
+    color: #3c8dbc;
+    text-shadow: none;
+    text-align: center;
+  }
+  p{
+    font-family:sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 300;
+    color:grey;
+    text-shadow: none;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      font-size: 16px;
+    }
+  }

@@ -1,0 +1,62 @@
+
+h2{
+    font-size: 17px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h3{
+    font-size: 17px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 17px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h4{
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color:#3c8dbc;
+}
+
+h5,p{
+    font-size: 17px;
+    margin-top: 15px;
+    text-align: left;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color:black;
+}
+
+.warning:hover{
+    background-color:white;
+}
+
+hr{
+    border-color: lightgray;
+}
+
+i{
+    cursor: pointer;
+}
+
+input,textarea{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+::placeholder {
+    font-size: 12px;
+  }

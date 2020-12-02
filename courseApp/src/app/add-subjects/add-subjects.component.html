@@ -1,0 +1,34 @@
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-12 topic mt-3 mr-2 bg-light">
+            <a>
+                <h2><b>Which operation you want to perform on subjects? Please perform accordingly.</b></h2>
+            </a>
+        </div>
+    </div>
+    <div
+        class="row h-100 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 justify-content-center align-items-center">
+        <div class="col-sm-12 add mt-3 bg-light frm">
+            <form #subjectForm="ngForm" (ngSubmit)="onSubmit(subjectForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="service.selectedSubjects._id">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nm" name="subject" #subject="ngModel"
+                        [(ngModel)]="service.selectedSubjects.subject" placeholder="Enter subject name here.." required>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!subjectForm.valid">ADD</button>&nbsp;
+                <button type="button" class="btn btn-info" (click)="resetForm(subjectForm)">RESET</button>
+            </form>
+        </div>
+    </div>
+    <div
+        class="row h-100 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 justify-content-center align-items-center">
+        <div class="col-sm-3 lg-3 topic mt-3 mr-1 bg-light" *ngFor="let obj of service.subjects">
+            <h3><a class="btn" (click)="onEdit(obj)">
+                <i class="fa fa-edit text-blue"></i>
+              </a><a class="btn" (click)="onDelete(obj._id,subjectForm)">
+                <i class="fa fa-remove text-red"></i>
+              </a><b class="ml-3">{{obj.subject}}</b></h3>
+        </div>
+    </div>
+</div>
+<!-- /.container -->

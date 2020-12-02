@@ -1,0 +1,74 @@
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-12 topic mt-3 mr-2 bg-light">
+            <a>
+                <h2><b>Select any subject to view topics related to it.</b></h2>
+            </a>
+        </div>
+    </div>
+    <h4><b>SUBJECTS</b></h4>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-3 topic mt-3 mr-1 bg-light" *ngFor="let obj of data">
+            <a (click)="getSubjectDetails(obj)">
+                <h3><b class="ml-3">{{obj.subject}}</b></h3>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-12 topic mt-3 mr-2 bg-light">
+            <a>
+                <h2><b>Click on below particular topic <i class="fa fa-plus text-blue"></i> icon to add question or click on  <i class="fa fa-eye mr-2 text-green"></i> icon to view questions.</b></h2>
+            </a>
+        </div>
+    </div>
+    <h4><b>TOPICS</b></h4>
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-3 topic mt-3 mr-1 bg-light" *ngFor="let obj of data2">
+            <a>
+                <h1>
+                    <i class="fa fa-eye mr-2 text-green" (click)="getTopicAndSubjectIdForGet(obj)"></i>
+                    <i class="fa fa-plus text-blue" data-toggle="modal" data-target="#myModal"
+                        (click)="getTopicAndSubjectIdToPost(obj)"></i><b class="ml-3">{{obj.topic}}</b>
+                </h1>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div class="row h-100 question mt-3 bg-light" *ngFor="let obj of data3">
+        <div class="col-sm-12">
+            <h5><b>QUESTION</b> : {{obj.question}}</h5>
+            <hr>
+            <p><b>ANSWER</b> &nbsp;&nbsp;: {{obj.answer}}</p>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<div class="container">
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center"><b>ADD QUESTION & ANSWER</b></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form #questionForm="ngForm" (ngSubmit)="onSubmit(questionForm)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nm" name="question" #question="ngModel"
+                            ngModel placeholder="Type your question here.." required>
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" id="nm" name="answer" #answer="ngModel"
+                            ngModel placeholder="Type your answer here.." rows="10" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="!questionForm.valid">ADD</button>&nbsp;
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

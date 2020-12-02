@@ -1,0 +1,33 @@
+.question{
+    height:100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    -moz-box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+    box-shadow: 0 0 5px #999;
+}
+
+
+h3{
+    font-size: 17px;
+    font-family: 'Courier New';
+    color:#3c8dbc;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.que{
+    color: #3c8dbc;
+}
+p{
+    font-size: 17px;
+    color: black;
+    font-family: 'Courier New';
+    font-weight: bold;
+}
+hr{
+    border-color: lightgray;
+}
+
+
+

@@ -1,0 +1,39 @@
+h2{
+    font-size: 17px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+h3{
+    font-size: 17px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: left;
+}
+h4{
+    font-size: 17px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.frm{
+    padding: 25px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+input{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+::placeholder {
+    font-size: 12px;
+  }
+ 

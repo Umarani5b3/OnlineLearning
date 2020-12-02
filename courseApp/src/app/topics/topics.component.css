@@ -1,0 +1,20 @@
+.topic{
+    height:100%;
+    border-radius: 5px;
+    align-items: center;
+}
+
+h3{
+    font-size: 17px;
+    font-family:sans-serif;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+}
+h3:hover{
+    color: #3c8dbc;
+}
+
+
+
+

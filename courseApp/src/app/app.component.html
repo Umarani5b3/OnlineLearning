@@ -1,0 +1,78 @@
+<div class="master-main-container col-sm-12 clearfix no-padding">
+  <div class="wrapper">
+    <header class="main-header">
+      <a href="" class="logo">
+        <span class="logo-lg"><b class="text-bold">Online</b>Learning</span>
+      </a>
+      <nav class="navbar navbar-static-top">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav">
+            <li class="nav-item">
+             <!-- <a class="nav-link active" href="#"><i class="fa fa-shopping-cart"></i></a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tooltip" title="Sign-In" [style.display]='iconHidden' routerLink="/Sign-in"><i class="fa fa-sign-in"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tooltip" title="Sign-Up" [style.display]='iconHidden' routerLink="/Sign-up"><i class="fa fa-user-plus"></i></a>
+            </li>
+            <li class="nav-item" [style.display]='logoutIconHidden'>
+              <a class="nav-link active" data-toggle="tooltip" title="Logout" (click)="OnlogoutClick()"><i class="fa fa-sign-out"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="content-wrapper" style="min-height: 959.667px;">
+      <section class="content-header">
+        <h1>
+          Dashboard
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Dashboard</li>
+        </ol>
+      </section>
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+      <div class="control-sidebar-bg">
+      </div>
+      <!--<router-outlet></router-outlet>-->
+    </div>
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 2.4.0
+      </div>
+      <strong>Copyright © 2014-2016 <a href="https://adminlte.io">Test data</a>.</strong> All rights
+      reserved.
+    </footer>
+    <aside class="main-sidebar">
+      <section class="sidebar" style="height: auto;">
+        <div class="user-panel" [style.display]='profileHidden'>
+          <div class="pull-left image">
+            <img [src]="imageUrl" class="rounded-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p>{{name}}</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+         <app-subjects></app-subjects>
+      </section>
+    </aside>
+  </div>
+</div>

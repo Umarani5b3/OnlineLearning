@@ -1,0 +1,24 @@
+<ul class="sidebar-menu tree" data-widget="tree">
+<li class="active"><a routerLink=""><i class="fa fa-book"></i> <span>Home</span></a></li>
+<li class="treeview menu" *ngFor='let obj of subjects' (click)="onSubjectClick(obj._id)">
+    <a href="#">
+        <i class="fa fa-list-alt"></i> <span>{{obj.subject | uppercase}}</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+            <li *ngFor='let data of topics'><a [routerLink]="['/questions',obj._id,data._id,data.topic]" (click)="stop($event, data)"><i class="fa fa-certificate"></i>{{data.topic | uppercase}}</a></li>
+    </ul>
+</li>
+<li [style.display]='menuHidden'><a><i class="fa fa-sign-in"></i> <span>Sign-In</span></a></li>
+<li [style.display]='menuHidden'><a><i class="fa fa-user-plus"></i> <span>Sign-Up</span></a></li>
+<!--<li><a><i class="fa fa-shopping-cart"></i> <span>Cart</span></a></li>-->
+<li [style.display]='logoutMenuHidden'><a (click)="OnlogoutClick()"><i class="fa fa-sign-out"></i> <span>Log-Out</span></a></li>
+<li class="header">About</li>
+<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>About Us</span></a></li>
+<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Contact Us</span></a></li>
+<li><a routerLink="/addSubjects"><i class="fa fa-book text-yellow"></i> <span>Add Subjects</span></a></li>
+<li><a routerLink="/addTopics"><i class="fa fa-list text-yellow"></i> <span>Add Topics</span></a></li>
+<li><a routerLink="/addQuestions"><i class="fa fa-question-circle text-yellow"></i> <span>Add Questions</span></a></li>
+</ul>

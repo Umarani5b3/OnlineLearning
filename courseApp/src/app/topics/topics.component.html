@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row h-100 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
+        <div class="col-sm-12 lg-3 topic mt-3 mr-1 bg-light" *ngFor="let obj of topics">
+            <a [routerLink]="['/questions',obj._subjectId,obj._id,obj.topic]" (click)="stop($event, obj)"><h3><b>{{obj.topic | uppercase}}</b></h3></a>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
