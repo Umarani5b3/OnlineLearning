@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges, SimpleChanges, DoCheck } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginAndRegistrationService } from './login-and-registration.service';
 
 
@@ -7,7 +8,7 @@ import { LoginAndRegistrationService } from './login-and-registration.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges,DoCheck {
   title = 'courseApp';
   data: any;
   iconHidden: string
@@ -17,13 +18,31 @@ export class AppComponent implements OnInit {
   temp: any
   imageUrl: string
   profileHidden: string
-  logoutIconHidden:string
+  logoutIconHidden: string
 
-  constructor(private service: LoginAndRegistrationService) {
+  constructor(private service: LoginAndRegistrationService,private router:Router) {
+
+  }
+  ngDoCheck(): void {
+    this.doChanges();
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    throw new Error('Method not implemented.');
+  }
+  ngOnInit() {
+    
+  }
+
+  OnlogoutClick() {
+    this.service.logout();
+    this.router.navigate(['/']);
+  }
+
+  doChanges() {
     if (localStorage.getItem('x-access-token')) {
       this.iconHidden = 'none';
       this.profileHidden = 'block'
-      this.logoutIconHidden='block'
+      this.logoutIconHidden = 'block'
       this.userId = (localStorage.getItem('user_id'))
       this.service.getCurrentUserData(this.userId).subscribe((res) => {
         this.data = res;
@@ -35,14 +54,7 @@ export class AppComponent implements OnInit {
     } else {
       this.iconHidden = 'block'
       this.profileHidden = 'none'
-      this.logoutIconHidden='none'
+      this.logoutIconHidden = 'none'
     }
-
-  }
-  ngOnInit() {
-  }
-
-  OnlogoutClick(){
-    this.service.logout();
   }
 }

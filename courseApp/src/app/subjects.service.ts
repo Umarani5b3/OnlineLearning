@@ -15,6 +15,17 @@ export class SubjectsService {
   postSubjects(sub: Subjects) {
     return this.http.post(this.baseURL, sub);
   }
+
+  postSubjectsViaFile(profileImage: File ) {
+    var formData: any = new FormData();
+    formData.append("myFile", profileImage);
+
+    console.log("service",formData)
+    return this.http.post(`${this.baseURL}/uploadfile`, formData, {
+      reportProgress: true,
+      observe: 'events'
+    })
+  }
   
   getSubjectsList() {
     return this.http.get(this.baseURL);

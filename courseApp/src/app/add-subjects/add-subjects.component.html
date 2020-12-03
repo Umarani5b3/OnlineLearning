@@ -32,3 +32,22 @@
     </div>
 </div>
 <!-- /.container -->
+
+<div class="container h-100 mt-3">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-5 card">
+            <h1 class="heading">Sign-Up</h1>
+            <form [formGroup]="form" (ngSubmit)="submitForm()">
+                <!-- File Input -->
+                <div class="form-group">
+                    <input type="file" (change)="uploadFile($event)">
+                </div>
+                
+                <!-- Submit -->
+                <div class="form-group text-center mt-4">
+                    <button class="btn btn-primary">Sign-Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

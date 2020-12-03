@@ -18,8 +18,6 @@ export class SubjectsComponent implements OnInit {
   data: any;
   subjects: Subjects[];
   topics: Topics[];
-  menuHidden:string
-  logoutMenuHidden:string
   selectedSubjectId: string;
   
   constructor(private subjectService: SubjectsService, 
@@ -30,14 +28,7 @@ export class SubjectsComponent implements OnInit {
     })
   }
   ngOnInit() {
-    if(localStorage.getItem('x-access-token')){
-      this.menuHidden='none';
-      this.logoutMenuHidden='block'
-      
-    }else{
-      this.menuHidden='block'
-      this.logoutMenuHidden='none'
-    }
+    
   }
   onSubjectClick(id: string) {
     if (id) {
@@ -54,8 +45,5 @@ export class SubjectsComponent implements OnInit {
     event.stopImmediatePropagation();
   }
 
-  OnlogoutClick(){
-    this.service.logout();
-  }
 
 }

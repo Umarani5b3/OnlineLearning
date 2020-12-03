@@ -45,11 +45,7 @@ let User = require('../models/users');
 // POST User
 router.post('/create-user', upload.single('avatar'), (req, res, next) => {
     const url = req.protocol + '://' + req.get('host')
-    console.log("ssssss")
-    console.log("sss", req.file.filename)
-    if (req.file.filename == 'undefined') {
-        console.log("hhhh")
-    }
+    
     const user = new User({
         _id: new mongoose.Types.ObjectId(),
         username: req.body.username,

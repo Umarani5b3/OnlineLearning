@@ -11,10 +11,6 @@
             <li *ngFor='let data of topics'><a [routerLink]="['/questions',obj._id,data._id,data.topic]" (click)="stop($event, data)"><i class="fa fa-certificate"></i>{{data.topic | uppercase}}</a></li>
     </ul>
 </li>
-<li [style.display]='menuHidden'><a><i class="fa fa-sign-in"></i> <span>Sign-In</span></a></li>
-<li [style.display]='menuHidden'><a><i class="fa fa-user-plus"></i> <span>Sign-Up</span></a></li>
-<!--<li><a><i class="fa fa-shopping-cart"></i> <span>Cart</span></a></li>-->
-<li [style.display]='logoutMenuHidden'><a (click)="OnlogoutClick()"><i class="fa fa-sign-out"></i> <span>Log-Out</span></a></li>
 <li class="header">About</li>
 <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>About Us</span></a></li>
 <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Contact Us</span></a></li>

@@ -53,7 +53,7 @@
     </footer>
     <aside class="main-sidebar">
       <section class="sidebar" style="height: auto;">
-        <div class="user-panel" [style.display]='profileHidden'>
+        <div class="user-panel" *ngIf="profileHidden=='block'">
           <div class="pull-left image">
             <img [src]="imageUrl" class="rounded-circle" alt="User Image">
           </div>
@@ -62,6 +62,7 @@
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
+        <!-- [style.display]='profileHidden'-->
         <form action="#" method="get" class="sidebar-form">
           <div class="input-group">
             <input type="text" name="q" class="form-control" placeholder="Search...">
